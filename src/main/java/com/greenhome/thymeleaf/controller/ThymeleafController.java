@@ -1,5 +1,6 @@
 package com.greenhome.thymeleaf.controller;
 
+import com.greenhome.thymeleaf.entity.Profile;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +15,26 @@ public class ThymeleafController {
     }
 
     @GetMapping("/date")
-    public String date (Model model){
+    public String getDate (Model model){
         model.addAttribute("dateNow", new Date());
         return "date";
+    }
+    @GetMapping("/variables")
+    public String GetVariable (Model model){
+        model.addAttribute("today", "Monday");
+
+        Profile profile = new Profile();
+        profile.setFullName("Ly Thanh Qui");
+        profile.setEmail("ceoltqui@gmail.com");
+
+        model.addAttribute("profile", profile);
+
+        model.addAttribute("id", 3);
+        model.addAttribute("page", 3);
+        model.addAttribute("limit", 10);
+        model.addAttribute("lang", "en");
+
+
+        return "variables";
     }
 }

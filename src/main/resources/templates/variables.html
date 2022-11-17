@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Variables</title>
+</head>
+<body>
+<h1>Variables </h1>
+
+<p>Today is <span th:text="${today}"></span>.</p>
+
+<ul th:object="${profile}">
+    <!-- th:object tồn tại trong phạm vi của thẻ div này -->
+    <li>Họ tên: <span th:text="*{fullName}"></span></li>
+    <li>Email: <span th:text="*{email}"></span></li>
+</ul>
+
+<h2 th:text="#{greeting}"></h2>
+
+<a th:href="@{http://localhost:8082}">Link1</a>
+
+<a th:href="@{/products(page=${page}, limit=${limit})}">Link2</a>
+
+<a th:href="@{/products/{id}(id=${id})}">Link3</a>
+
+<a th:href="@{/products/{id}(id=${id}, lang=${lang})}">Link4</a>
+
+<div th:with="firstName = 'Sam', lastName = 'Smith', fullName = ${firstName} + ' ' + ${lastName}">
+    First Name: <span th:utext="${firstName}"></span>
+    <br>
+    Last Name: <span th:utext="${lastName}"></span>
+    <br>
+    Full Name: <span th:utext="${fullName}"></span>
+</div>
+
+
+</body>
+</html>

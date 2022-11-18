@@ -5,5 +5,25 @@
 </head>
 <body>
 <h1>Condition</h1>
+<th:block th:if="${age} <= 29">
+    <span> Tổi trẻ tài cao</span>
+</th:block>
+<th:block th:unless="${age} > 29">
+    <span>Tuổi trẻ tài cao</span>
+</th:block>
+
+<th:block th:switch="${dow}">
+    <span th:case="2">thứ 2</span>
+    <span th:case="3">thứ 3</span>
+    <span th:case="4">thứ 4</span>
+    <span th:case="5">thứ 5</span>
+    <span th:case="6">thứ 6</span>
+    <span th:case="7">thứ 7</span>
+    <span th:case="*">chủ nhật</span>
+</th:block>
+<span th:text="${age} > 29 ? 'Bạn quá già hic' : 'Tuổi trẻ tài cao'"></span>
+
+
+
 </body>
 </html>

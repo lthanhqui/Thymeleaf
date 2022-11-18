@@ -20,7 +20,7 @@ public class ThymeleafController {
         return "date";
     }
     @GetMapping("/variables")
-    public String GetVariable (Model model){
+    public String getVariable (Model model){
         model.addAttribute("today", "Monday");
 
         Profile profile = new Profile();
@@ -34,7 +34,13 @@ public class ThymeleafController {
         model.addAttribute("limit", 10);
         model.addAttribute("lang", "en");
 
-
         return "variables";
+    }
+
+    @GetMapping("/condition")
+    public String getCondition(Model model){
+        model.addAttribute("age", 18);
+        model.addAttribute("dow", 5);
+        return "condition";
     }
 }

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello Thymeleaf</title>
+</head>
+<body>
+<h1>loop</h1>
+<table border="1">
+    <tr th:each="flower, state : ${flowers}">
+        <td th:text="${state.index}"></td>
+        <td th:text="${state.count}"></td>
+        <td th:text="${state.size}"></td>
+        <td th:text="${state.even}"></td>
+        <td th:text="${state.odd}"></td>
+        <td th:text="${state.first}"></td>
+        <td th:text="${state.last}"></td>
+        <td th:text="${flower}"></td>
+    </tr>
+</table>
+</body>
+</html>

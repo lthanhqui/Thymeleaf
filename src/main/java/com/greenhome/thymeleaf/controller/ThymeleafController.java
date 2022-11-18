@@ -15,12 +15,13 @@ public class ThymeleafController {
     }
 
     @GetMapping("/date")
-    public String getDate (Model model){
+    public String getDate(Model model) {
         model.addAttribute("dateNow", new Date());
         return "date";
     }
+
     @GetMapping("/variables")
-    public String getVariable (Model model){
+    public String getVariable(Model model) {
         model.addAttribute("today", "Monday");
 
         Profile profile = new Profile();
@@ -38,9 +39,20 @@ public class ThymeleafController {
     }
 
     @GetMapping("/condition")
-    public String getCondition(Model model){
+    public String getCondition(Model model) {
         model.addAttribute("age", 18);
         model.addAttribute("dow", 5);
         return "condition";
+    }
+
+    @GetMapping("/loop")
+    public String getLoop(Model model) {
+        String[] flowers = new String[]{
+                "Rose",
+                "Lily",
+                "Tulip"
+        };
+        model.addAttribute("flowers", flowers);
+        return "loop";
     }
 }

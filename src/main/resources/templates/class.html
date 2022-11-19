@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello Thymeleaf</title>
+</head>
+<body>
+<h1>class</h1>
+<p class="default-class" th:class="${isAdmin} ? admin-class : user-class">
+    Some Text 1
+</p>
+
+<p th:class="${isAdmin} ? admin-class : user-class">
+    Some Text 2
+</p>
+
+<p class="default-class" th:classappend="${isAdmin} ? admin-class : user-class">
+    Some Text 1
+</p>
+
+<p th:style="${isAmin} ? 'font-style: bold;' : 'font-style: italic;'">
+    Some Text 1
+</p>
+<p style ="font-style: bold" th:styleappend ="${isAdmin} ? 'color: blue' : 'color: black'">
+    Some Text 1
+</p>
+
+
+
+</body>
+</html>

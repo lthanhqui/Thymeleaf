@@ -55,4 +55,10 @@ public class ThymeleafController {
         model.addAttribute("flowers", flowers);
         return "loop";
     }
+
+    @GetMapping("/class")
+    public String getClass(Model model){
+        model.addAttribute("isAdmin", true);
+        return "class";
+    }
 }

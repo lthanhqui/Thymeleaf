@@ -70,4 +70,9 @@ public class ThymeleafController {
         session.setAttribute("mygreeting", "Hello Everyone!");
         return "basicobject";
     }
+
+    @GetMapping("/utilityobject")
+    public String utilityObject (){
+        return "utilityobject";
+    }
 }

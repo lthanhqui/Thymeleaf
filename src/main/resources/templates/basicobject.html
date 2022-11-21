@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic object</title>
+</head>
+<body>
+<h4>Language is <span th:text="${#locale.language}"></span></h4>
+<h4>Request URI <span th:text="${#request.requestURI}"></span></h4>
+<h4>Request URL <span th:text="${#request.requestURL}"></span></h4>
+<h3 th:utext="${#session.getAttribute('mygreeting')}"></h3>
+</body>
+</html>

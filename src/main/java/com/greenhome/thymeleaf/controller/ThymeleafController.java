@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 
 @Controller
@@ -57,8 +59,15 @@ public class ThymeleafController {
     }
 
     @GetMapping("/class")
-    public String getClass(Model model){
+    public String getClass(Model model) {
         model.addAttribute("isAdmin", true);
         return "class";
+    }
+
+    @GetMapping("/object")
+    public String object(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        session.setAttribute("mygreeting", "Hello Everyone!");
+        return "basicobject";
     }
 }

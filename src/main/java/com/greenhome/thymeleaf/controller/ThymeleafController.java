@@ -65,9 +65,18 @@ public class ThymeleafController {
     }
 
     @GetMapping("/object")
-    public String object(HttpServletRequest request) {
+    public String getObject(HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.setAttribute("mygreeting", "Hello Everyone!");
         return "basicobject";
+    }
+
+    @GetMapping("/utilityobject")
+    public String getUtilityObject (){
+        return "utilityobject";
+    }
+    @GetMapping("/totemplate")
+    public String getToTemplate (){
+        return "totemplate";
     }
 }
